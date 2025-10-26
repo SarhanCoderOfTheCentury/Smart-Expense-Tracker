@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Expense tracker</title>
+    <link rel="stylesheet" href="smart-expense-tracker.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- <h2 class="smart-expense-tracker">Smart Expense Tracker Dashboard</h2> -->
+   <div class="section">
+     <div class="container">
+        <main class="main-section">
+            <header class="headings">
+
+                <div>
+                    <h2 class="balance-text">Total Balance</h2>
+                    <span class="balance-amount">0</span>
+
+                </div>
+                <div class="income-expense">
+                    <div class="income">
+                        <h2 class="income-text">Income</h2>
+                        <span class="income-amount">0</span>
+                    </div>
+                    <div class="expense">
+                        <h2 class="expense-text">Expense</h2>
+                        <span class="expense-amount">0</span>
+                    </div>
+                </div>
+            </header>
+        </main>
+        <section class="add-transaction">
+            <div class="add-transaction-header">
+                <h3>➕ Add Transaction</h3>
+            </div>
+            <div class="add-transaction-form">
+                <form action="#">
+                    <label for="username">Name</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="amount">Amount</label>
+                    <input type="text" id="amount" name="amount" required>
+                    <label for="expense-type">Expense Type:</label>
+                    <select id="expense-type" name="expense-type" style="padding: 0.7rem; font-size: 1rem;">
+                        <option value="">-- Select Type --</option>
+                        <option value="food">Food</option>
+                        <option value="bills">Bills</option>
+                        <option value="salary">Salary</option>
+                        <option value="business">Business Revenue</option>
+                        <option value="furniture">Furniture</option>
+                        <option value="repair">Repair work</option>
+                        <option value="technology">Technology products</option>
+                        <option value="investment">Investment Returns</option>
+                        <option value="transport">Transport</option>
+                        <option value="shopping">Shopping</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="health">Health</option>
+                        <option value="education">Education</option>
+                        <option value="donation">Donation</option>
+                        <option value="rent">Rent</option>
+                        <option value="misc-income">Miscellaneous(income)</option>
+                        <option value="misc-expense">Miscellaneous(expense)</option>
+                    </select>
+                    <label for="myDate">Select a Date:</label>
+                    <input type="date" id="myDate" name="event_date">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+        <section class="transaction">
+            <div class="transaction-header">
+                <h3>⌛ Transaction History</h3>
+            </div>
+            <div class="transaction-list">
+                <ul class="transaction-list-items">
+                </ul>
+            </div>
+        </section>
+        <section class="chart">
+            <div class="chart-heading">
+                <h3>📊 Expense Visualization</h3>
+            </div>
+            <div class="chart-diagram" width="200px" height="200px">
+                <canvas id="expenseChart"></canvas>
+            </div>
+        </section>
+        <section class="ai-response">
+            <div class="ai-response-header">
+                
+            </div>
+            <div>
+                <button class="get-ai-response-btn">🤖 Get AI Suggestions</button>
+            </div>
+        </section>
+    </div>
+   </div>
+    <script src="smart-expense-tracker.js"></script>
+</body>
+
+</html>

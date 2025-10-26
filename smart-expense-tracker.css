@@ -1,0 +1,223 @@
+/* Importing poppins Google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Setting global properties */
+* {
+    font-family: 'Poppins', 'Sans-serif';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: none;
+
+}
+
+html {
+    font-size: 1;
+}
+
+/* Using the :root pseudo selector */
+:root {
+    /* Dark theme colors */
+    --text-color: #edf3ff;
+    --subheading-color: #97a7ca;
+    --placeholder-color: #c3cdde;
+    --primary-color: #101623;
+    --secondary-color: #283045;
+    --secondary-hover-color: #333e58;
+    --scrollbar-color: #626a7f;
+}
+
+/* Setting properties for body */
+body {
+    padding: 2rem;
+}
+.section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+/* 00. Setting up grid container */
+.container {
+    display: grid;
+    max-width: 998px;
+    max-height: 800px;
+    min-width: 600px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    margin: 0 auto;
+    place-self: center;
+    gap: 7px;
+}
+
+.container :where(.main-section, .transaction, .add-transaction, .chart, .ai-response) {
+    border-radius: 20px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+}
+
+/* 01. Header section */
+.main-section {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    background: linear-gradient(135deg, #332851 60%, #6a4cff 100%);
+    box-shadow: 0 0 12px 2px #6a4cff44, 0 3px 5px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.headings {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    color: aliceblue;
+    min-height: 170px;
+}
+
+.balance-amount {
+    font-size: 1.5rem;
+}
+
+.income-expense {
+    display: flex;
+    padding: 10px;
+    margin-top: 10px;
+    gap: 90px;
+    font-size: 1rem;
+}
+
+.income-amount,
+.expense-amount {
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+/* 02.Transaction history */
+.transaction {
+    grid-column: 1/2;
+    grid-row: 2;
+    background: linear-gradient(135deg, #e4ad3e 60%, #dfcf91 100%);
+    box-shadow: 0 0 12px 2px #ffd70044, 0 3px 5px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    overflow-y: auto;
+    color: #fffdfd;
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+}
+
+.transaction-header {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.transaction-list-items {
+    list-style: none;
+    margin: 7px;
+}
+
+.transaction-list-item {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7px;
+}
+
+.transaction-item p {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.transaction-item span {
+    font-size: 1rem;
+}
+
+.transaction-amount {
+    font-size: 1.1rem;
+    margin-top: 7px;
+}
+
+/* 03.Add transaction */
+.add-transaction {
+    grid-column: 2/3;
+    grid-row: 2/2;
+    background: linear-gradient(135deg, #CA3074 60%, #ff6a9a 100%);
+    box-shadow: 0 0 12px 2px #ff6a9a44, 0 3px 5px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.add-transaction-form form {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.add-transaction-form input {
+    font-size: 1.1rem;
+    padding: 0.3rem;
+}
+
+.add-transaction-form form button {
+    margin: 1rem;
+    padding: 5px;
+    border-radius: 0.1rem;
+    outline: none;
+    border: none;
+    background-color: #0042c7;
+    color: white;
+    transition: 0.3s;
+}
+
+.add-transaction-form form button :hover {
+    opacity: 0.8;
+}
+
+/* 03.Expense visualization chart */
+.chart {
+    grid-column: 2;
+    grid-row: 1;
+    background: linear-gradient(135deg, #be1033 60%, #ff5e62 100%);
+    box-shadow: 0 0 12px 2px #ff5e6244, 0 3px 5px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chart-heading {
+    margin-bottom: 10px;
+}
+
+#expense-chart {
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.ai-response {
+    grid-column: span 2;
+    grid-row: 3/4;
+    min-height: 300px;
+    background: linear-gradient(135deg, #00979a 60%, #00ffd0 100%);
+    box-shadow: 0 0 12px 2px #00ffd044, 0 3px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 2px;
+    overflow-y: auto;
+    color: #fffdfd;
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.ai-response .get-ai-response-btn {
+    padding: 5px;
+    border-radius: 0.8rem;
+    outline: none;
+    border: none;
+    background-color: #0042c7;
+    color: white;
+    transition: 0.3s;
+    font-size: 1.1rem;
+}
+
