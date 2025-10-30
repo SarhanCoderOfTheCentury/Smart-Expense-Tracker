@@ -129,11 +129,11 @@ const generateAIResponse = async (aiPrompt) => {
         const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
             method: "POST",
             headers: {
-                "Authorization": "Bearer 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",
+                "Authorization": "Bearer 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",
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                model: "deepseek/deepseek-chat-v3.1:free",
+                model: "z-ai/glm-4.5-air:free",
                 messages: [
                     { role: "user", content: aiPrompt }
                 ]
@@ -172,10 +172,8 @@ aiResponsebtn.addEventListener('click', async () => {
      <div class="ai-response-header">
      <h3>AI Response</h3>
      </div>
-    <div>${response}</div>`; // display response
+    <div style="white-space: pre-wrap;">${response}</div>`; // display response
 })
-
-
 
 // Create a pie chart using Chart.js
 const Chart = window.Chart; // Ensure Chart.js is available globally
@@ -205,7 +203,6 @@ const expenseChart = new Chart(ctx, {
 });
 
 expenseChart.update();
-
 
 //Initial load
 renderList();
