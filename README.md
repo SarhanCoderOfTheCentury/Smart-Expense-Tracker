@@ -51,10 +51,7 @@ You can add images or GIFs here (for example):
 
 ```markdown
 ![Dashboard Preview](assets/dashboard-preview.png)
-![Expense Chart](assets/expense-chart.png)
 ```
-
-*(Replace with your actual image paths or upload to GitHub)*
 
 ---
 
